@@ -1,24 +1,21 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import AddComponent from "./components/AddComponent/AddConponent";
+import ToDoComponent from "./components/ToDoComponent/ToDoComponent";
+import { useAppSelector } from "./hooks";
+import classes from "./App.module.scss";
 
 function App() {
+  const { todos } = useAppSelector((state) => state.todoReducer);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={classes.App}>
+      <div className={classes.wrapper}>
+        <div className={classes.project_title}>Things To Do:</div>
+        <AddComponent />
+        {todos.map((value) => (
+          <ToDoComponent key={value.key} todo={value}></ToDoComponent>
+        ))}
+      </div>
     </div>
   );
 }

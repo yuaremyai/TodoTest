@@ -1,0 +1,17 @@
+.edit_component{
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    width: 100%;
+}
+
+.edit_component_input, .edit_component_input:focus {
+    background-color: #AFB4FF;
+    border: none;
+    outline: none;
+    height: 40px;
+    font-size: 20px;
+    border-radius: 10px;
+    grid-column: span 11;
+    padding: 0px 10px;
+}
+
