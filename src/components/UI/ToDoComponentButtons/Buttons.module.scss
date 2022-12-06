@@ -1,0 +1,21 @@
+.delete_button, .edit_button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 30px;
+    width: 30px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.edit_button{
+    background-color: #4de854;
+}
+
+.delete_button{
+    background-color: #ff5c5c;
+}
+
+.button_icon {
+    height: 15px;
+}

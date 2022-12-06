@@ -1,0 +1,20 @@
+.add_component {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    margin-top: 10px;
+    
+}
+
+.add_component_input, .add_component_input:focus{
+    background-color: #AFB4FF;
+    grid-column: span 11;
+    border: none;
+    outline: none;
+    height: 40px;
+    font-size: 20px;
+    border-radius: 10px;
+    width: 100%;
+    padding: 0px 10px;
+    box-shadow: 1px 1px 5px gray;
+
+}
