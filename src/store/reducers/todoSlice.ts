@@ -50,6 +50,7 @@ export const todoSlice = createSlice({
         (value) => value.id === action.payload
       )[0];
       todo.editMode = !todo.editMode;
+      save(state.todos);
     },
   },
 });
