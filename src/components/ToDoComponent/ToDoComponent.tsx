@@ -1,30 +1,40 @@
 import React from "react";
-import Checkbox from "../UI/Checkbox/Checkbox";
-import DeleteButton from "../UI/ToDoComponentButtons/DeleteButton";
-import EditButton from "../UI/ToDoComponentButtons/EditButton";
 import EditComponent from "../EditComponent/EditComponent";
-import classes from "./ToDoComponent.module.scss";
 import { Todo } from "../../types";
+import styled from "styled-components";
+import Grid from "../Grid";
+import TodoBody from "./TodoBody";
 
 interface Props {
   todo: Todo;
 }
 
-function ToDoComponent({ todo }: Props) {
+const TaskContainer = styled(Grid)`
+  padding: 5px 10px;
+  width: 100%;
+  border-radius: 10px;
+  align-items: center;
+  column-gap: 5px;
+  box-shadow: 1px 1px 5px gray;
+
+  &:nth-child(odd) {
+    background-color: #9c9efe;
+  }
+
+  &:nth-child(even) {
+    background-color: #afb4ff;
+  }
+`;
+
+function TodoComponent({ todo }: Props) {
   return (
-    <div className={classes.todo_component}>
-      {todo.editMode ? (
-        <EditComponent text={todo.text} id={todo.id} />
-      ) : (
-        <div className={classes.todo_component_body}>
-          <Checkbox isChecked={todo.checked} id={todo.id} />
-          <div className={classes.todo_component_text}>{todo.text}</div>
-          <EditButton id={todo.id} />
-          <DeleteButton id={todo.id} />
-        </div>
-      )}
-    </div>
+    <TaskContainer>
+      {todo.editMode 
+      ? <EditComponent text={todo.text} id={todo.id} />
+      : <TodoBody todo={todo}/> 
+      }
+    </TaskContainer>
   );
 }
 
-export default ToDoComponent;
+export default TodoComponent;

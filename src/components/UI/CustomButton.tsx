@@ -20,12 +20,12 @@ const StyledButton = styled.div<ButtonProps>`
 `;
 
 const ButtonImage = styled.img`
-  width: 75%;
+  width: 70%;
 `;
 
 function CustomButton(props: ButtonProps) {
   return (
-    <StyledButton {...props}>
+    <StyledButton {...props} onClick={props.handleClick} >
       <ButtonImage src={props.src} alt="" />
     </StyledButton>
   );
