@@ -2,21 +2,23 @@ import React from "react";
 import AddComponent from "./components/AddComponent/AddConponent";
 import ToDoComponent from "./components/ToDoComponent/ToDoComponent";
 import { useAppSelector } from "./hooks";
-import classes from "./App.module.scss";
+import Body from "./components/Body";
+import Title from "./components/Title";
+import Container from "./components/Container";
 
 function App() {
   const { todos } = useAppSelector((state) => state.todoReducer);
 
   return (
-    <div className={classes.App}>
-      <div className={classes.wrapper}>
-        <div className={classes.project_title}>Things To Do:</div>
+    <Body>
+      <Container>
+        <Title>Things To Do:</Title>
         <AddComponent />
         {todos.map((value) => (
           <ToDoComponent key={value.key} todo={value}></ToDoComponent>
         ))}
-      </div>
-    </div>
+      </Container>
+    </Body>
   );
 }
 
