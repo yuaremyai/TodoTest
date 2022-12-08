@@ -1,4 +1,3 @@
-import 'styled-components'
 
 export interface Todo {
     text: string;
@@ -9,13 +8,14 @@ export interface Todo {
 }
 
 export interface ChildrenProp{
-    children: React.ReactNode
+    children: React.ReactNode;
 }
 
-declare module 'styled-components'{
-
-    export interface FlexStyles{
-        align: string;
-        justify: string;
-    }
+export interface ButtonProps{
+    size: string;
+    bgColor: string;
+    shadowed?: boolean;
+    handleClick: () => void;
+    src: string;
 }
+

@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import Checkbox from "../UI/Checkbox/Checkbox";
 import DeleteButton from "../UI/ToDoComponentButtons/DeleteButton";
 import EditButton from "../UI/ToDoComponentButtons/EditButton";
