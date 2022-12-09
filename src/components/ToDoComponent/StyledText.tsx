@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import { ChildrenProp } from "../../types";
 
 const StyledText = styled.p`
   grid-column: span 9;
@@ -8,8 +7,5 @@ const StyledText = styled.p`
   word-break: break-word;
 `;
 
-function Text(props:ChildrenProp) {
-  return <StyledText {...props}/>;
-}
 
-export default Text;
+export default StyledText;
