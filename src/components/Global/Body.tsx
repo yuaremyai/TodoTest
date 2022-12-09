@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import { ChildrenProp } from "../../types";
 
 const StyledBody = styled.div`
   display: flex;
@@ -15,8 +14,4 @@ const StyledBody = styled.div`
   );
 `;
 
-function Body(props: ChildrenProp) {
-  return <StyledBody {...props} />;
-}
-
-export default Body;
+export default StyledBody;

@@ -7,9 +7,7 @@ export interface Todo {
     editMode: boolean;
 }
 
-export interface ChildrenProp{
-    children: React.ReactNode;
-}
+
 
 export interface ButtonProps{
     size: string;

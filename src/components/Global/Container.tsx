@@ -1,8 +1,7 @@
 import React from 'react'
 import styled from "styled-components";
-import { ChildrenProp } from '../../types'
 
-const StyledAppContainer = styled.div`
+const Container = styled.div`
   width: 500px;
   height: 600px;
   display: flex;
@@ -13,8 +12,6 @@ const StyledAppContainer = styled.div`
   overflow-y: scroll;
 `;
 
-function Container(props: ChildrenProp) {
-  return <StyledAppContainer {...props} />
-}
+
 
 export default Container

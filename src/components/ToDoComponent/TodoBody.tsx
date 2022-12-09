@@ -3,12 +3,12 @@ import { Todo } from "../../types";
 import trash from "../../images/trash.svg";
 import edit from "../../images/edit.svg";
 import Checkbox from "../UI/Checkbox";
-import Text from "./Text";
 import CustomButton from "../UI/CustomButton";
 import { useAppDispatch } from "../../hooks";
 import { todoSlice } from "../../store/reducers/todoSlice";
 import styled from "styled-components";
 import Grid from "../Global/Grid";
+import StyledText from "./StyledText";
 
 interface Props {
   todo: Todo;
@@ -44,7 +44,7 @@ function TodoBody({ todo }: Props) {
   return (
     <TaskContainer>
       <Checkbox isChecked={todo.checked} handleClick={handleCheck} />
-      <Text>{todo.text}</Text>
+      <StyledText>{todo.text}</StyledText>
       <CustomButton
         src={edit}
         size="30px"
