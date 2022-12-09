@@ -15,6 +15,11 @@ function save(todos: Todo[]) {
   localStorage.setItem("todos", JSON.stringify(todos));
 }
 
+function filterTodo(state:TodoState, id:number) {
+  return state.todos.filter((value) => value.id === id)[0]
+}
+
+
 export const todoSlice = createSlice({
   name: "todos",
   initialState,
@@ -30,25 +35,19 @@ export const todoSlice = createSlice({
     },
 
     editTodo(state, action: PayloadAction<{ id: number; text: string }>) {
-      const todo = state.todos.filter(
-        (value) => value.id === action.payload.id
-      )[0];
+      const todo = filterTodo(state, action.payload.id)
       todo.text = action.payload.text;
       save(state.todos);
     },
 
     setCheck(state, action: PayloadAction<number>) {
-      const todo = state.todos.filter(
-        (value) => value.id === action.payload
-      )[0];
+      const todo = filterTodo(state, action.payload)
       todo.checked = !todo.checked;
       save(state.todos);
     },
 
     setEditMode(state, action: PayloadAction<number>) {
-      const todo = state.todos.filter(
-        (value) => value.id === action.payload
-      )[0];
+      const todo = filterTodo(state, action.payload)
       todo.editMode = !todo.editMode;
       save(state.todos);
     },
