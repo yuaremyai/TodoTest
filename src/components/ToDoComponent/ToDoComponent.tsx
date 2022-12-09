@@ -1,39 +1,36 @@
 import React from "react";
-import EditComponent from "../EditComponent/EditComponent";
+import TaskEditComponent from "../TaskEditComponent";
 import { Todo } from "../../types";
 import styled from "styled-components";
-import Grid from "../Grid";
+import Grid from "../Global/Grid";
 import TodoBody from "./TodoBody";
+import { TaskContainer } from "./TodoBody";
 
 interface Props {
   todo: Todo;
 }
 
-const TaskContainer = styled(Grid)`
-  padding: 5px 10px;
-  width: 100%;
-  border-radius: 10px;
-  align-items: center;
-  column-gap: 5px;
-  box-shadow: 1px 1px 5px gray;
+const CheckerGrid = styled(Grid)`
+border-radius: 10px;
 
-  &:nth-child(odd) {
-    background-color: #9c9efe;
-  }
+&:nth-child(odd) ${TaskContainer} {
+  background-color: #9c9efe;
+}
 
-  &:nth-child(even) {
-    background-color: #afb4ff;
-  }
-`;
+&:nth-child(even) ${TaskContainer} {
+  background-color: #afb4ff;
+}
+`
+
 
 function TodoComponent({ todo }: Props) {
   return (
-    <TaskContainer>
+    <CheckerGrid>
       {todo.editMode 
-      ? <EditComponent text={todo.text} id={todo.id} />
+      ? <TaskEditComponent text={todo.text} id={todo.id} />
       : <TodoBody todo={todo}/> 
       }
-    </TaskContainer>
+    </CheckerGrid>
   );
 }
 

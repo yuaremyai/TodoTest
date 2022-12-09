@@ -1,8 +1,8 @@
 import React from 'react'
 import styled from "styled-components";
-import { ChildrenProp } from '../types'
+import { ChildrenProp } from '../../types'
 
-const StyledContainer = styled.div`
+const StyledAppContainer = styled.div`
   width: 500px;
   height: 600px;
   display: flex;
@@ -14,7 +14,7 @@ const StyledContainer = styled.div`
 `;
 
 function Container(props: ChildrenProp) {
-  return <StyledContainer {...props} />
+  return <StyledAppContainer {...props} />
 }
 
 export default Container

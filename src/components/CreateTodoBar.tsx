@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useAppDispatch } from "../hooks";
 import { todoSlice } from "../store/reducers/todoSlice";
-import Grid from "./Grid";
+import Grid from "./Global/Grid";
 import CustomButton from "./UI/CustomButton";
 import CustomInput from "./UI/CustomInput";
 import addIcon from "../images/add.svg";

@@ -19,6 +19,7 @@ interface Props {
   placeholder?: string;
   onKeyUp?: (e: React.KeyboardEvent<Element>) => void;
   onChange: (e: React.FormEvent<HTMLInputElement>) => void;
+  autofocus?: boolean
 }
 
 function CustomInput(props: Props) {
